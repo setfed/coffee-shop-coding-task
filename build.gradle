@@ -1,0 +1,42 @@
+plugins {
+    id "application"
+}
+
+ext {
+    javaMainClass = "com.fsetkov.EntryPoint"
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.fsetkov.EntryPoint'
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+    logger.lifecycle("Using Java [{}] with following compatibility settings: 'source' - {}, 'target' - {}",
+            JavaVersion.current(), sourceCompatibility, targetCompatibility)
+}
+
+apply plugin : "java"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClassName = javaMainClass
+}
+
+group = 'com.fsetkov'
+version = '1.0'
