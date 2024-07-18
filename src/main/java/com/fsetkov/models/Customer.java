@@ -1,8 +1,8 @@
 package com.fsetkov.models;
 
 public class Customer {
-    private String username;
-    private CustomerStampCard customerStampCard;
+    private final String username;
+    private final CustomerStampCard customerStampCard;
 
     public Customer(String username) {
         this.username = username;

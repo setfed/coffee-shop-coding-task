@@ -102,7 +102,9 @@ public class PrintService {
      * @param stampCard              the customer's stamp card
      * @param isEligibleForFreeExtra whether the customer is eligible for a free extra product
      */
-    public void printReceipt(List<Product> buyingList, CustomerStampCard stampCard, boolean isEligibleForFreeExtra) {
+    public void printReceipt(List<Product> buyingList,
+                             CustomerStampCard stampCard,
+                             boolean isEligibleForFreeExtra) {
         if (buyingList.isEmpty()) {
             return;
         }
